@@ -1,0 +1,22 @@
+parameters:
+  commands: ['@generateCommand', '@countWaterCommand']
+
+services:
+  combinationsGenerator:
+    class: App\Service\CombinationsGenerator
+
+  waterCounter:
+    class: App\Service\WaterCounter
+
+  generateCommand:
+    class: App\Command\GenerateCommand
+    arguments: ['@combinationsGenerator', 'app:generate:combinations']
+
+  countWaterCommand:
+    class: App\Command\CountWaterCommand
+    arguments: ['@waterCounter', 'app:count:water']
+
+  application:
+    class: Symfony\Component\Console\Application
+    calls:
+      - [addCommands, ['%commands%']]

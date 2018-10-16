@@ -1,0 +1,23 @@
+{
+    "name": "c4boomb/company-test",
+    "description": "Test for company",
+    "authors": [
+        {
+            "name": "Lev Grigoryev",
+            "email": "lev.grigoryev.al@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.5",
+        "symfony/console": "^3.4",
+        "symfony/dependency-injection": "^3.4",
+        "symfony/config": "^3.4",
+        "symfony/yaml": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
